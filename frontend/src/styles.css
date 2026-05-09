@@ -1,0 +1,425 @@
+:root {
+  color-scheme: light;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #f7f8fb;
+  color: #1c1f29;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body, html, #root {
+  margin: 0;
+  min-height: 100%;
+}
+
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  background: #fff;
+  border-bottom: 1px solid #e7e9f0;
+}
+
+.section-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.section-subtitle {
+  color: #60687d;
+  margin-top: 0.25rem;
+  font-size: 0.95rem;
+}
+
+.header-actions,
+.modal-footer,
+.modal-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.header-button,
+.primary-button,
+.secondary-button,
+button {
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.header-button,
+.secondary-button {
+  background: #eef2ff;
+  color: #2e3a68;
+  padding: 0.7rem 1rem;
+}
+
+.primary-button {
+  background: #4f46e5;
+  color: #fff;
+  padding: 0.85rem 1rem;
+}
+
+.secondary-button:hover,
+.header-button:hover,
+.primary-button:hover {
+  opacity: 0.95;
+}
+
+.page-content {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.section-page {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.placeholder {
+  padding: 2rem;
+  background: #fff;
+  border-radius: 18px;
+  text-align: center;
+  color: #667085;
+}
+
+.feed-list,
+.gallery-grid,
+.grid-shop,
+.rating-table,
+.competition-content {
+  display: grid;
+  gap: 1rem;
+}
+
+.feed-card,
+.booking-card,
+.shop-card,
+.rating-card,
+.game-card,
+.gallery-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 12px 34px rgba(15, 23, 42, 0.06);
+  padding: 1rem;
+  text-align: left;
+}
+
+.feed-card-text,
+.mini-title,
+.shop-card-title,
+.player-name,
+.game-row,
+.shop-price {
+  margin-bottom: 0.75rem;
+}
+
+.feed-images-grid,
+.shop-gallery {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.feed-images-grid img,
+.shop-gallery img,
+.gallery-card img,
+.gallery-fullimage,
+.player-avatar img {
+  width: 100%;
+  border-radius: 14px;
+  display: block;
+}
+
+.feed-images-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.comment-row,
+.booking-detail,
+.rating-card,
+.game-card,
+.shop-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.comment-row input,
+.booking-detail input,
+.shop-detail input,
+.shop-detail textarea,
+.modal-body input,
+.modal-body textarea,
+.modal-body select,
+.modal-body label input {
+  width: 100%;
+  padding: 0.85rem 0.9rem;
+  border-radius: 14px;
+  border: 1px solid #d8dee8;
+  margin-top: 0.5rem;
+  font: inherit;
+}
+
+.comment-row button {
+  min-width: 100px;
+}
+
+.feed-footer,
+.game-meta,
+.rating-card .player-info,
+.gallery-caption,
+.shop-sku {
+  color: #475569;
+  font-size: 0.95rem;
+}
+
+.reaction-bar button {
+  background: #f8fafc;
+  color: #344054;
+  padding: 0.6rem 0.9rem;
+}
+
+.calendar-grid,
+.grid-shop,
+.gallery-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.calendar-grid {
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+}
+
+.calendar-day {
+  padding: 1rem;
+  border-radius: 18px;
+  background: #fff;
+  border: 1px solid transparent;
+  text-align: left;
+}
+
+.calendar-day.available {
+  border-color: #4f46e5;
+}
+
+.calendar-day:hover {
+  background: #f8fafc;
+}
+
+.shop-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  text-align: left;
+}
+
+.shop-card-image {
+  height: 160px;
+  object-fit: cover;
+}
+
+.shop-card-placeholder,
+.gallery-placeholder,
+.avatar-placeholder {
+  min-height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eef2ff;
+  color: #4f46e5;
+  border-radius: 14px;
+}
+
+.shopping-card,
+.player-avatar {
+  flex-shrink: 0;
+}
+
+.shop-detail img,
+.gallery-fullimage {
+  width: 100%;
+  max-height: 320px;
+  object-fit: cover;
+  border-radius: 18px;
+  margin-bottom: 1rem;
+}
+
+.shop-detail,
+.booking-detail,
+.competition-select {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.rating-table {
+  grid-template-columns: 1fr;
+}
+
+.rating-card {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.player-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #eef2ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.player-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.game-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.game-card {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.game-row {
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.game-vs {
+  margin: 0 0.75rem;
+}
+
+.game-score {
+  padding: 0.75rem 1rem;
+  border-radius: 16px;
+}
+
+.game-score.success {
+  background: #ecfdf5;
+  color: #166534;
+}
+
+.game-score.canceled {
+  background: #f8d7da;
+  color: #842029;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15, 23, 42, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 50;
+}
+
+.modal-card {
+  width: min(100%, 560px);
+  background: #fff;
+  border-radius: 22px;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.2);
+  padding: 1rem;
+}
+
+.modal-title {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.modal-body {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.modal-footer {
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.close-button {
+  background: transparent;
+  color: #475569;
+  font-size: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .grid-shop {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.bottom-nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.8rem 0;
+  background: #fff;
+  border-top: 1px solid #e7e9f0;
+}
+
+.nav-item {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: #64748b;
+}
+
+.nav-item.active {
+  background: #eef2ff;
+  color: #4f46e5;
+}
+
+.nav-icon {
+  font-size: 1.4rem;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
